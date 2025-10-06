@@ -66,10 +66,18 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className={`space-y-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+            <ul className={`space-y-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
               <li>Sri Lanka</li>
-              <li>chinthanachamod50@gmail.com</li>
-              <li>+94 (71) 750-0753</li>
+              <li className="break-all sm:break-words overflow-wrap-anywhere">
+                <a href="mailto:chinthanachamod50@gmail.com" className="hover:underline transition-colors">
+                  chinthanachamod50@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+94717500753" className="hover:underline transition-colors">
+                  +94 (71) 750-0753
+                </a>
+              </li>
             </ul>
           </div>
         </div>

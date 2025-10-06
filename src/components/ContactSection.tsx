@@ -96,13 +96,13 @@ const ContactSection = () => {
             }} transition={{
               duration: 0.5,
               delay: index * 0.1
-            }} className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} transition-colors`}>
+            }} className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} transition-colors min-w-0`}>
                   <div className={`p-3 rounded-full mr-4 ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-600'}`}>
                     {item.icon}
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h3 className="font-bold">{item.title}</h3>
-                    <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base break-all sm:break-words overflow-wrap-anywhere`}>
                       {item.value}
                     </p>
                   </div>

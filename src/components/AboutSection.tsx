@@ -192,7 +192,7 @@ const AboutSection = () => {
               I also have good knowledge and experience working with AI tools.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div>
                 <h4 className="font-bold mb-2">Name:</h4>
                 <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -201,8 +201,10 @@ const AboutSection = () => {
               </div>
               <div>
                 <h4 className="font-bold mb-2">Email:</h4>
-                <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                  chinthanachamod50@gmail.com
+                <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} text-sm sm:text-base break-all sm:break-normal overflow-wrap-anywhere`}>
+                  <a href="mailto:chinthanachamod50@gmail.com" className="hover:underline transition-colors">
+                    chinthanachamod50@gmail.com
+                  </a>
                 </p>
               </div>
               <div>
