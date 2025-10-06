@@ -7,6 +7,7 @@ const ContactSection = () => {
     theme
   } = useTheme();
   const [formData, setFormData] = useState({
+    access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '',
     name: '',
     email: '',
     subject: '',
@@ -14,6 +15,7 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -24,24 +26,45 @@ const ContactSection = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    setSubmitError('');
+    setSubmitSuccess(false);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitSuccess(true);
+        setFormData({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '',
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const contactInfo = [{
     icon: <MailIcon size={24} />,
@@ -56,8 +79,8 @@ const ContactSection = () => {
   }, {
     icon: <MapPinIcon size={24} />,
     title: 'Location',
-    value: 'Sri Lanka',
-    link: '#'
+    value: 'Panadura, Sri Lanka',
+    link: 'https://maps.app.goo.gl/HtvsYqq9QjUP1vn6A'
   }];
   return <section id="contact" className={`py-20 relative ${theme === 'dark' ? 'bg-transparent' : 'bg-transparent'}`}>
       {/* Subtle gradient overlay for better readability */}
@@ -164,6 +187,13 @@ const ContactSection = () => {
           delay: 0.2
         }} className="lg:col-span-2">
             <form onSubmit={handleSubmit} className={`p-8 rounded-lg shadow-lg ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'}`}>
+              {/* Hidden fields for Web3Forms */}
+              <input type="hidden" name="access_key" value={formData.access_key} />
+              <input type="hidden" name="subject" value={`Portfolio Contact: ${formData.subject}`} />
+              <input type="hidden" name="from_name" value={formData.name} />
+              {/* Honeypot field for spam protection */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -190,8 +220,11 @@ const ContactSection = () => {
                 </label>
                 <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required className={`w-full px-4 py-3 rounded-lg ${theme === 'dark' ? 'bg-gray-800 border-gray-700 text-white focus:border-blue-500' : 'bg-gray-100 border-gray-300 text-gray-900 focus:border-blue-500'} border focus:ring-2 focus:ring-blue-500/20 outline-none transition-colors`} placeholder="Your message here..."></textarea>
               </div>
+              {submitError && <div className="mb-6 p-4 rounded-lg bg-red-500/20 text-red-500 text-center">
+                  {submitError}
+                </div>}
               {submitSuccess && <div className="mb-6 p-4 rounded-lg bg-green-500/20 text-green-500 text-center">
-                  Your message has been sent successfully!
+                  Your message has been sent successfully! I'll get back to you soon.
                 </div>}
               <button type="submit" disabled={isSubmitting} className={`w-full px-6 py-3 rounded-lg text-white font-medium bg-blue-600 hover:bg-blue-700 transition-colors flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
                 {isSubmitting ? <>
