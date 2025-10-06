@@ -9,6 +9,9 @@ const Header = () => {
   } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [displayText, setDisplayText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const brandName = 'ChaMaX';
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -16,6 +19,36 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    
+    const typeWriter = () => {
+      if (isTyping) {
+        if (displayText.length < brandName.length) {
+          setDisplayText(brandName.slice(0, displayText.length + 1));
+          timeout = setTimeout(typeWriter, 200); // Typing speed
+        } else {
+          timeout = setTimeout(() => {
+            setIsTyping(false);
+          }, 1000); // Pause before erasing
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+          timeout = setTimeout(typeWriter, 100); // Erasing speed
+        } else {
+          timeout = setTimeout(() => {
+            setIsTyping(true);
+          }, 500); // Pause before typing again
+        }
+      }
+    };
+
+    timeout = setTimeout(typeWriter, 200);
+    return () => clearTimeout(timeout);
+  }, [displayText, isTyping, brandName]);
   const navLinks = [{
     name: 'Home',
     href: '#home'
@@ -44,7 +77,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <div className="flex-shrink-0">
             <a href="#home" className="text-2xl font-bold">
-              ChaMaX
+              <span className="inline-flex items-center">
+                {displayText}
+                <motion.span
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ 
+                    duration: 0.8, 
+                    repeat: Infinity, 
+                    repeatType: "reverse" 
+                  }}
+                  className="ml-1 text-blue-500"
+                >
+                  |
+                </motion.span>
+              </span>
             </a>
           </div>
           {/* Desktop Navigation */}
