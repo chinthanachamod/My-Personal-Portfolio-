@@ -9,58 +9,49 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const projects = [{
     id: 1,
-    title: 'Modern E-Commerce Platform',
+    title: 'Blood Donation Management System',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
-    description: 'Full-stack e-commerce platform with payment integration, admin dashboard, and inventory management.',
-    technologies: ['React', 'Spring Boot', 'MySQL', 'PayPal API'],
-    liveLink: 'https://github.com/chinthanachamod',
-    githubLink: 'https://github.com/chinthanachamod'
+    image: 'src/assets/Blood_Donationa_MS.jpg',
+    description: 'A web-based platform designed to connect blood donors, hospitals, and patients. The system enables donors to register and request donations, patients to request blood, and hospitals to manage blood stock, appointments, and requests efficiently. It includes role-based authentication, email notifications, and location-based hospital search.',
+    technologies: ['Spring Boot', 'MySQL', 'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Spring Security'],
+    liveLink: 'https://www.youtube.com/watch?v=OJ0JZV-H3kc',
+    githubLink: 'https://github.com/chinthanachamod/Blood-Donation-Management-System'
   }, {
     id: 2,
-    title: 'Project Management System',
+    title: 'Animal Empire - Animal Hospital',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80',
-    description: 'Comprehensive project management tool with team collaboration features and real-time updates.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-    liveLink: 'https://github.com/chinthanachamod',
-    githubLink: 'https://github.com/chinthanachamod'
+    image: 'src/assets/Animal_Hospital.jpg',
+    description: 'Animal Empire-Animal Hospital is a layered architecture Java application designed to manage appointments, pets, owners, medicines, suppliers, and prescriptions for an animal hospital.',
+    technologies: ['Java 17', 'Maven', 'JavaFX', 'FXML', 'MySQL', 'JFoenix', 'Layered architecture / MVC-style organization'],
+    liveLink: '',
+    githubLink: 'https://github.com/chinthanachamod/Animal-Hospital---Layered'
   }, {
     id: 3,
-    title: 'Mobile Banking App',
+    title: 'TastyLanka Mobile App',
     category: 'app',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-    description: 'Secure mobile banking application with biometric authentication and transaction management.',
-    technologies: ['React Native', 'Firebase', 'Redux', 'Biometric Auth'],
-    liveLink: 'https://github.com/chinthanachamod',
+    image: 'src/assets/TastyLanka-mobile app.png',
+    description: 'TastyLanka is a cross-platform mobile app that helps users, especially foreigners, discover, explore and share authentic traditional Sri Lankan food.',
+    technologies: ['React Native', 'Firebase', 'TypeScript', 'Expo'],
+    liveLink: 'https://youtu.be/r_z9hVSRIik',
     githubLink: 'https://github.com/chinthanachamod'
   }, {
     id: 4,
-    title: 'Real Estate Platform',
-    category: 'web',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-    description: 'Property listing and management platform with advanced search and virtual tours.',
-    technologies: ['React', 'Spring Boot', 'PostgreSQL', 'Google Maps API'],
-    liveLink: 'https://github.com/chinthanachamod',
-    githubLink: 'https://github.com/chinthanachamod'
+    title: 'Smart Parking Management System (SPMS) - Backend',
+    category: 'other',
+    image: 'src/assets/Smart_Parking_MS.png',
+    description: 'A microservices-based smart parking system built with Spring Boot and Spring Cloud. It provides service discovery, centralized configuration, an API gateway, and dedicated services for users, vehicles, payments and parking-space management.',
+    technologies: ['Java', 'Spring Boot', 'Spring Cloud (Eureka, Config)', 'API Gateway', 'Maven', 'PostgreSQL', 'Docker', 'REST', 'JUnit'],
+    liveLink: '',
+    githubLink: 'https://github.com/chinthanachamod/Smart-Parking-MS'
   }, {
     id: 5,
-    title: 'Learning Management System',
-    category: 'web',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-    description: 'Online learning platform with video streaming, progress tracking, and assessment tools.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Video.js'],
-    liveLink: 'https://github.com/chinthanachamod',
-    githubLink: 'https://github.com/chinthanachamod'
-  }, {
-    id: 6,
-    title: 'Health Monitoring App',
-    category: 'app',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
-    description: 'Health tracking mobile app with AI-powered insights and doctor consultation features.',
-    technologies: ['React Native', 'Python', 'TensorFlow', 'Firebase'],
-    liveLink: 'https://github.com/chinthanachamod',
-    githubLink: 'https://github.com/chinthanachamod'
+    title: 'The Connect-4 Game',
+    category: 'other',
+    image: 'src/assets/Connect-4-Game.png',
+    description: 'A desktop implementation of the classic Connect Four game built with Java and JavaFX. Supports two human players and an AI opponent, includes player creation UI, game-state persistence, and a responsive board UI.',
+    technologies: ['Java 11+', 'JavaFX', 'Maven', 'JUnit', 'Scene Builder'],
+    liveLink: '',
+    githubLink: 'https://github.com/chinthanachamod/connect-four-game-assignment'
   }];
   const filters = [{
     id: 'all',
@@ -71,6 +62,9 @@ const ProjectsSection = () => {
   }, {
     id: 'app',
     label: 'App'
+  }, {
+    id: 'other',
+    label: 'Other'
   }];
   const filteredProjects = activeFilter === 'all' ? projects : projects.filter(project => project.category === activeFilter);
   return <section id="projects" className={`py-20 relative ${theme === 'dark' ? 'bg-transparent' : 'bg-transparent'}`}>
