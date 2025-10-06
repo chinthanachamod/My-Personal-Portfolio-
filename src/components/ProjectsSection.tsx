@@ -73,8 +73,10 @@ const ProjectsSection = () => {
     label: 'App'
   }];
   const filteredProjects = activeFilter === 'all' ? projects : projects.filter(project => project.category === activeFilter);
-  return <section id="projects" className={`py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  return <section id="projects" className={`py-20 relative ${theme === 'dark' ? 'bg-transparent' : 'bg-transparent'}`}>
+      {/* Subtle gradient overlay for better readability */}
+      <div className={`absolute inset-0 z-0 ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-gray-900/60' : 'bg-gradient-to-b from-gray-50/60 via-white/40 to-gray-50/60'}`}></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial={{
         opacity: 0,
         y: 50

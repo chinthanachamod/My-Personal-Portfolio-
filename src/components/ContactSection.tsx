@@ -59,8 +59,10 @@ const ContactSection = () => {
     value: 'Sri Lanka',
     link: '#'
   }];
-  return <section id="contact" className={`py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  return <section id="contact" className={`py-20 relative ${theme === 'dark' ? 'bg-transparent' : 'bg-transparent'}`}>
+      {/* Subtle gradient overlay for better readability */}
+      <div className={`absolute inset-0 z-0 ${theme === 'dark' ? 'bg-gradient-to-b from-gray-800/70 via-gray-800/50 to-gray-900/70' : 'bg-gradient-to-b from-white/70 via-gray-50/50 to-white/70'}`}></div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div initial={{
         opacity: 0,
         y: 50

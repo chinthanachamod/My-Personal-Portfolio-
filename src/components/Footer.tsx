@@ -31,7 +31,11 @@ const Footer = () => {
     icon: <InstagramIcon size={20} />,
     href: 'https://instagram.com/chinthanachamod'
   }];
-  return <footer className={`py-12 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'} relative overflow-hidden`}>
+  return <footer className={`py-12 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'} relative overflow-hidden border-t ${theme === 'dark' ? 'border-gray-700' : 'border-gray-300'}`} style={{ zIndex: 20 }}>
+      {/* Solid background to block particle animation */}
+      <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'}`}></div>
+      {/* Top separator line */}
+      <div className={`absolute top-0 left-0 right-0 h-px ${theme === 'dark' ? 'bg-gradient-to-r from-transparent via-gray-600 to-transparent' : 'bg-gradient-to-r from-transparent via-gray-400 to-transparent'}`}></div>
       {/* Background decoration */}
       {theme === 'dark' && <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-900/5 to-transparent"></div>}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ThemeProvider } from './components/ThemeContext';
 import Layout from './components/Layout';
 import Header from './components/Header';
@@ -8,18 +8,24 @@ import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import ParticleBackground from './components/ParticleBackground';
 import { AnimatePresence } from 'framer-motion';
 export function App() {
   return <ThemeProvider>
       <AnimatePresence>
         <Layout>
           <Header />
-          <main className="w-full">
+          <main className="w-full relative">
             <HeroSection />
             <AboutSection />
-            <SkillsSection />
-            <ProjectsSection />
-            <ContactSection />
+            
+            {/* Particle animation background for Skills, Projects, and Contact sections */}
+            <div className="relative">
+              <ParticleBackground />
+              <SkillsSection />
+              <ProjectsSection />
+              <ContactSection />
+            </div>
           </main>
           <Footer />
         </Layout>
