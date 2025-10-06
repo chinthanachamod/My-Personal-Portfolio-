@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from 'lucide-react';

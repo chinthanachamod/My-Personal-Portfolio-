@@ -17,7 +17,7 @@ const Footer = () => {
   }, {
     name: 'LinkedIn',
     icon: <LinkedinIcon size={20} />,
-    href: 'https://linkedin.com/in/chinthanachamod'
+    href: 'https://www.linkedin.com/in/chinthana-chamod-2a133b323/'
   }, {
     name: 'WhatsApp',
     icon: (
@@ -29,7 +29,7 @@ const Footer = () => {
   }, {
     name: 'Instagram',
     icon: <InstagramIcon size={20} />,
-    href: 'https://instagram.com/chinthanachamod'
+    href: 'https://www.instagram.com/chinthana_chamod_bn?igsh=aHh3MnVmcWRtZ2w4'
   }];
   return <footer className={`py-12 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'} relative overflow-hidden border-t ${theme === 'dark' ? 'border-gray-700' : 'border-gray-300'}`} style={{ zIndex: 20 }}>
       {/* Solid background to block particle animation */}
