@@ -30,8 +30,8 @@ const ProjectsSection = () => {
     title: 'TastyLanka Mobile App',
     category: 'app',
     image: 'src/assets/TastyLanka-mobile app.png',
-    description: 'TastyLanka is a cross-platform mobile app that helps users, especially foreigners, discover, explore and share authentic traditional Sri Lankan food.',
-    technologies: ['React Native', 'Firebase', 'TypeScript', 'Expo'],
+    description: 'TastyLanka is a cross-platform mobile app built with Expo and React Native that helps users discover, rate, and save Sri Lankan dishes. It features Firebase authentication and Firestore for data, image uploads, user ratings, favourites, and an intuitive tailwind-styled UI.',
+    technologies: ['Expo', 'React Native', 'TypeScript', 'Expo Router', 'NativeWind (Tailwind for RN)', 'Firebase (Auth, Firestore, Storage)', 'Context API'],
     liveLink: 'https://youtu.be/r_z9hVSRIik',
     githubLink: 'https://github.com/chinthanachamod'
   }, {
