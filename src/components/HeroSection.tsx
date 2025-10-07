@@ -49,7 +49,7 @@ const HeroSection = () => {
           <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="inline-block">Hello, I'm </span>
             <span className={`inline-block ${theme === 'dark' ? 'bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text'}`}>
-              _Chinthana Chamod
+              Chinthana Chamod
             </span>
           </motion.h1>
           <motion.h2 variants={itemVariants} className="text-xl md:text-2xl lg:text-3xl mb-8">
