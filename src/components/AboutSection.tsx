@@ -165,7 +165,7 @@ const AboutSection = () => {
                 }}
               />
               <img 
-                src="src/assets/My Image.jpg" 
+                src="assets/My Image.jpg" 
                 alt="Profile" 
                 className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:transform group-hover:scale-[1.01] relative z-10" 
               />
