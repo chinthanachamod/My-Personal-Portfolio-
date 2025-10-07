@@ -108,9 +108,11 @@
 //     </section>;
 // };
 // export default AboutSection;
+
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { FileDownIcon } from 'lucide-react';
+import TestImage from "./../assets/My Image.jpg"
 
 const AboutSection = () => {
   const { theme } = useTheme();
@@ -165,7 +167,8 @@ const AboutSection = () => {
                 }}
               />
               <img 
-                src="assets/My Image.jpg" 
+                src={TestImage}
+                  // src="assets/My Image.jpg" 
                 alt="Profile" 
                 className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:transform group-hover:scale-[1.01] relative z-10" 
               />
