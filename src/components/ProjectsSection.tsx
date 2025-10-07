@@ -39,7 +39,7 @@ const ProjectsSection = () => {
     description: 'TastyLanka is a cross-platform mobile app built with Expo and React Native that helps users discover, rate, and save Sri Lankan dishes. It features Firebase authentication and Firestore for data, image uploads, user ratings, favourites, and an intuitive tailwind-styled UI.',
     technologies: ['Expo', 'React Native', 'TypeScript', 'Expo Router', 'NativeWind (Tailwind for RN)', 'Firebase (Auth, Firestore, Storage)', 'Context API'],
     liveLink: 'https://youtu.be/r_z9hVSRIik',
-    githubLink: 'https://github.com/chinthanachamod'
+    githubLink: 'https://github.com/chinthanachamod/TastyLanka'
   }, {
     id: 4,
     title: 'Smart Parking Management System (SPMS) - Backend',
