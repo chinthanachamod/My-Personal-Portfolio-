@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDownIcon, FileDownIcon } from 'lucide-react';
+import { ArrowDownIcon } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 const HeroSection = () => {
   const {
@@ -62,13 +62,13 @@ const HeroSection = () => {
             experience and performance.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
-            <a href="#contact" className={`px-8 py-3 rounded-full text-white font-medium bg-gradient-to-r ${theme === 'dark' ? 'from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' : 'from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600'} transition-all shadow-lg hover:shadow-blue-500/20`}>
+            {/* <a href="#contact" className={`px-8 py-3 rounded-full text-white font-medium bg-gradient-to-r ${theme === 'dark' ? 'from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' : 'from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600'} transition-all shadow-lg hover:shadow-blue-500/20`}>
               Contact Me
             </a>
             <a href="/Chinthana-Chamod-CV.pdf" download="Chinthana-Chamod-CV.pdf" className={`px-8 py-3 rounded-full font-medium border-2 transition-colors flex items-center gap-2 ${theme === 'dark' ? 'border-gray-700 hover:border-gray-600 text-white hover:bg-gray-800' : 'border-gray-300 hover:border-gray-400 text-gray-800 hover:bg-gray-100'}`}>
               <FileDownIcon size={18} />
               Download CV
-            </a>
+            </a> */}
             <a href="#projects" className={`px-8 py-3 rounded-full font-medium border-2 transition-colors ${theme === 'dark' ? 'border-gray-700 hover:border-gray-600 text-white hover:bg-gray-800' : 'border-gray-300 hover:border-gray-400 text-gray-800 hover:bg-gray-100'}`}>
               View My Work
             </a>
