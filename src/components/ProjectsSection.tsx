@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeContext';
 import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import TestImage_1 from "./../assets/Blood_Donationa_MS.jpg";
+import TestImage_2 from "./../assets/Animal_Hospital.jpg";
+import TestImage_3 from "./../assets/TastyLanka-mobile app.png";
+import TestImage_4 from "./../assets/Smart_Parking_MS.png";
+import TestImage_5 from "./../assets/Connect-4-Game.png";
+
 const ProjectsSection = () => {
   const {
     theme
@@ -11,7 +17,7 @@ const ProjectsSection = () => {
     id: 1,
     title: 'Blood Donation Management System',
     category: 'web',
-    image: 'src/assets/Blood_Donationa_MS.jpg',
+    image: TestImage_1,
     description: 'A web-based platform designed to connect blood donors, hospitals, and patients. The system enables donors to register and request donations, patients to request blood, and hospitals to manage blood stock, appointments, and requests efficiently. It includes role-based authentication, email notifications, and location-based hospital search.',
     technologies: ['Spring Boot', 'MySQL', 'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Spring Security'],
     liveLink: 'https://www.youtube.com/watch?v=OJ0JZV-H3kc',
@@ -20,7 +26,7 @@ const ProjectsSection = () => {
     id: 2,
     title: 'Animal Empire - Animal Hospital',
     category: 'web',
-    image: 'src/assets/Animal_Hospital.jpg',
+    image: TestImage_2,
     description: 'Animal Empire-Animal Hospital is a layered architecture Java application designed to manage appointments, pets, owners, medicines, suppliers, and prescriptions for an animal hospital.',
     technologies: ['Java 17', 'Maven', 'JavaFX', 'FXML', 'MySQL', 'JFoenix', 'Layered architecture / MVC-style organization'],
     liveLink: '',
@@ -29,7 +35,7 @@ const ProjectsSection = () => {
     id: 3,
     title: 'TastyLanka Mobile App',
     category: 'app',
-    image: 'src/assets/TastyLanka-mobile app.png',
+    image: TestImage_3,
     description: 'TastyLanka is a cross-platform mobile app built with Expo and React Native that helps users discover, rate, and save Sri Lankan dishes. It features Firebase authentication and Firestore for data, image uploads, user ratings, favourites, and an intuitive tailwind-styled UI.',
     technologies: ['Expo', 'React Native', 'TypeScript', 'Expo Router', 'NativeWind (Tailwind for RN)', 'Firebase (Auth, Firestore, Storage)', 'Context API'],
     liveLink: 'https://youtu.be/r_z9hVSRIik',
@@ -38,7 +44,7 @@ const ProjectsSection = () => {
     id: 4,
     title: 'Smart Parking Management System (SPMS) - Backend',
     category: 'other',
-    image: 'src/assets/Smart_Parking_MS.png',
+    image: TestImage_4,
     description: 'A microservices-based smart parking system built with Spring Boot and Spring Cloud. It provides service discovery, centralized configuration, an API gateway, and dedicated services for users, vehicles, payments and parking-space management.',
     technologies: ['Java', 'Spring Boot', 'Spring Cloud (Eureka, Config)', 'API Gateway', 'Maven', 'PostgreSQL', 'Docker', 'REST', 'JUnit'],
     liveLink: '',
@@ -47,7 +53,7 @@ const ProjectsSection = () => {
     id: 5,
     title: 'The Connect-4 Game',
     category: 'other',
-    image: 'src/assets/Connect-4-Game.png',
+    image: TestImage_5,
     description: 'A desktop implementation of the classic Connect Four game built with Java and JavaFX. Supports two human players and an AI opponent, includes player creation UI, game-state persistence, and a responsive board UI.',
     technologies: ['Java 11+', 'JavaFX', 'Maven', 'JUnit', 'Scene Builder'],
     liveLink: '',
